@@ -18,7 +18,7 @@ chatSdk.on('connect', () => {
     console.log('SOOP Chat SDK 연결 성공');
     // 여기에 테스트 메시지 추가
     addChatMessage({
-        user: { nickname: "테스트시청자1" },
+        user: { nickname: "klumi22" },
         content: "연결 성공! OBS에 정상적으로 띄워졌나요?"
     });
 });
@@ -67,3 +67,4 @@ function addChatMessage(message) {
         messageDiv.remove();
     }, 5000); 
 }
+
