@@ -1,0 +1,74 @@
+body {
+    background-color: transparent; /* OBS에서 투명 배경 처리 */
+    margin: 0;
+    padding: 10px;
+    overflow: hidden; /* 스크롤바 숨김 */
+    font-family: 'Arial', sans-serif;
+}
+
+#chat-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* 메시지 간격 */
+}
+
+.chat-message {
+    display: flex;
+    align-items: flex-end;
+    animation: fadeInOut 5s forwards; /* 5초간 보이다 사라짐 */
+}
+
+.avatar {
+    width: 50px; /* 아바타 크기 */
+    height: 50px;
+    background-color: #ddd; /* 기본 아바타 배경색 */
+    border-radius: 50%; /* 원형 아바타 */
+    margin-right: 10px;
+    /* 여기에 메이플 캐릭터 이미지 스프라이트를 배경 이미지로 설정 가능 */
+    background-size: cover;
+    background-position: center;
+}
+
+.bubble {
+    background-color: white;
+    padding: 10px 15px;
+    border-radius: 15px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    position: relative;
+    max-width: 300px;
+    word-wrap: break-word;
+    color: #333;
+}
+
+/* 말풍선 꼬리 디자인 */
+.bubble::after {
+    content: '';
+    position: absolute;
+    bottom: 5px; /* 꼬리 위치 조정 */
+    left: -8px; /* 꼬리 위치 조정 */
+    width: 0;
+    height: 0;
+    border-top: 8px solid transparent;
+    border-right: 10px solid white; /* 말풍선 색상과 일치 */
+    border-bottom: 8px solid transparent;
+}
+
+.nickname {
+    font-weight: bold;
+    color: #000;
+    display: block;
+    margin-bottom: 3px;
+    font-size: 0.9em;
+}
+
+.content {
+    font-size: 1em;
+}
+
+/* 메시지 애니메이션 (나타나고 사라짐) */
+@keyframes fadeInOut {
+    0% { opacity: 0; transform: translateY(50px); }
+    10% { opacity: 1; transform: translateY(0); }
+    90% { opacity: 1; transform: translateY(0); }
+    100% { opacity: 0; display: none; }
+}
